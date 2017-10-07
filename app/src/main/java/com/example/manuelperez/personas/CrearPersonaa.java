@@ -9,11 +9,14 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+
 public class CrearPersonaa extends AppCompatActivity {
     private String [] sexo;
     private Spinner cajaSexo;
     private EditText cajaCedula, cajaNombre, cajaApellido;
     private Resources res;
+    private ArrayList<Integer> fotos;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,11 @@ public class CrearPersonaa extends AppCompatActivity {
         cajaNombre = (EditText)findViewById(R.id.txtNombre);
         cajaApellido = (EditText)findViewById(R.id.txtApellido);
         res = this.getResources();
+
+        fotos = new ArrayList<>();
+        fotos.add(R.drawable.images);
+        fotos.add(R.drawable.images2);
+        fotos.add(R.drawable.images3);
 
         sexo = res.getStringArray(R.array.arr_genero);
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,sexo);
@@ -40,7 +48,7 @@ public class CrearPersonaa extends AppCompatActivity {
         apellido = cajaApellido.getText().toString();
         sex = cajaSexo.getSelectedItemPosition();
 
-        Persona p = new Persona(cedula, nombre, apellido, sex);
+        Persona p = new Persona(cedula, nombre, apellido, sex, Metodos.fotoAleatoria(fotos));
         p.guardar();
 
         Toast.makeText(this, res.getString(R.string.mensaje_guardado), Toast.LENGTH_SHORT).show();

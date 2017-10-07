@@ -1,6 +1,7 @@
 package com.example.manuelperez.personas;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 /**
  * Created by manuelperez on 9/30/17.
@@ -46,5 +47,14 @@ public class Metodos {
         }
 
         return hombres;
+    }
+
+    public static int fotoAleatoria(ArrayList<Integer> fotos){
+        int fotoSeleccionada;
+        Random r = new Random();
+
+        fotoSeleccionada = r.nextInt(fotos.size());
+
+        return fotos.get(fotoSeleccionada);
     }
 }
