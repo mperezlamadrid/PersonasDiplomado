@@ -9,9 +9,20 @@
     <string name="crear_persona">CREAR PERSONAS</string>
     <string name="mensaje_guardado">Persona Guardada Exitosamente!</string>
     <string name="crear_p">Crear</string>
+    <string name="listado_listview">Listado Persona</string>
     <string name="listar_personas">Listar</string>
     <string-array name="opciones">
         <item>@string/crear_p</item>
         <item>@string/listar_personas</item>
+        <item>@string/listar_personas</item>
+        <item>@string/listar_personas</item>
+        <item>@string/listar_personas</item>
+    </string-array>
+    <string name="male">Masculino</string>
+    <string name="female">Femenino</string>
+    <string name="sexo">Sexo</string>
+    <string-array name="arr_genero">
+        <item>@string/male</item>
+        <item>@string/female</item>
     </string-array>
 </resources>
